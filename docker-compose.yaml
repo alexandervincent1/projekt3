@@ -1,0 +1,13 @@
+services:
+  projekt3:
+    image: mysql:8.0
+    container_name: projekt3-db
+    env_file:
+      - .env        
+    ports:
+      - "3306:3306"
+    volumes:
+      - projekt3_data:/var/lib/mysql
+
+volumes:
+  projekt3_data:

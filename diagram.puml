@@ -1,0 +1,34 @@
+@startuml
+title UML Klassdiagram - Beställningssystem
+
+class Customer {
+  +CustomerID : int
+  +Name : string
+  +Email : string
+  +Phone : string
+}
+
+class Product {
+  +ProductID : int
+  +Name : string
+  +Price : decimal
+  +Stock : int
+}
+
+class Order {
+  +OrderID : int
+  +OrderDate : DateTime
+  +Status : string
+}
+
+class OrderItem {
+  +OrderItemID : int
+  +Quantity : int
+}
+
+
+Customer  --> Order : gör
+Order  --> OrderItem : innehåller
+Product  -->  OrderItem : väljs
+
+@enduml

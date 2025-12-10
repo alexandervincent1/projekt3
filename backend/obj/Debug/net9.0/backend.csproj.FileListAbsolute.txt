@@ -1,0 +1,8 @@
+/Users/master/Desktop/Te4/projekt3/backend/obj/Debug/net9.0/backend.csproj.AssemblyReference.cache
+/Users/master/Desktop/Te4/projekt3/backend/obj/Debug/net9.0/rpswa.dswa.cache.json
+/Users/master/Desktop/Te4/projekt3/backend/obj/Debug/net9.0/backend.GeneratedMSBuildEditorConfig.editorconfig
+/Users/master/Desktop/Te4/projekt3/backend/obj/Debug/net9.0/backend.AssemblyInfoInputs.cache
+/Users/master/Desktop/Te4/projekt3/backend/obj/Debug/net9.0/backend.AssemblyInfo.cs
+/Users/master/Desktop/Te4/projekt3/backend/obj/Debug/net9.0/backend.csproj.CoreCompileInputs.cache
+/Users/master/Desktop/Te4/projekt3/backend/obj/Debug/net9.0/backend.MvcApplicationPartsAssemblyInfo.cs
+/Users/master/Desktop/Te4/projekt3/backend/obj/Debug/net9.0/backend.MvcApplicationPartsAssemblyInfo.cache
