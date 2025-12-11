@@ -24,7 +24,7 @@ namespace projekt3.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(OrderItem item) {
+        public IActionResult Create([FromBody] OrderItem item) {
             _context.OrderItems.Add(item);
             _context.SaveChanges();
             return CreatedAtAction(nameof(GetById), new { id = item.OrderItemID }, item);

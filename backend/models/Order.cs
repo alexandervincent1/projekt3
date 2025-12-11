@@ -6,7 +6,7 @@ namespace projekt3.Models
         public DateTime OrderDate { get; set; } = DateTime.Now;
         public string Status { get; set; } = "Pending";
 
-        public Customer Customer { get; set; } = null!;
+        public Customer? Customer { get; set; }
         public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
     }
 }

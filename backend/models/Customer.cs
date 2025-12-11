@@ -4,5 +4,5 @@ public class Customer {
     public string Email { get; set; } = null!;
     public string Phone { get; set; } = null!;
 
-    public ICollection<Order> Orders { get; set; } = new List<Order>();
+
 }

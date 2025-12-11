@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beställningssystem - Projekt 3</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>🛒 Beställningssystem</h1>
+        <p>Hantera kunder, produkter och beställningar</p>
+    </header>
+
+    <nav>
+        <button class="nav-btn active" data-view="customers">👥 Kunder</button>
+        <button class="nav-btn" data-view="products">📦 Produkter</button>
+        <button class="nav-btn" data-view="orders">🛍️ Beställningar</button>
+    </nav>
+
+    <main>
+        <!-- KUNDER VIEW -->
+        <section id="customers-view" class="view active">
+            <div class="view-header">
+                <h2>Kunder</h2>
+                <button class="btn btn-primary" onclick="showCustomerForm()">+ Lägg till Kund</button>
+            </div>
+
+            <div id="customer-form" class="form-container" style="display: none;">
+                <h3 id="customer-form-title">Ny Kund</h3>
+                <form id="customerForm">
+                    <input type="hidden" id="customerId">
+                    <div class="form-group">
+                        <label>Namn *</label>
+                        <input type="text" id="customerName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email *</label>
+                        <input type="email" id="customerEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Telefon *</label>
+                        <input type="tel" id="customerPhone" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Spara</button>
+                        <button type="button" class="btn btn-secondary" onclick="cancelCustomerForm()">Avbryt</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Namn</th>
+                            <th>Email</th>
+                            <th>Telefon</th>
+                            <th>Åtgärder</th>
+                        </tr>
+                    </thead>
+                    <tbody id="customers-table">
+                        <tr><td colspan="5" class="loading">Laddar...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- PRODUKTER VIEW -->
+        <section id="products-view" class="view">
+            <div class="view-header">
+                <h2>Produkter</h2>
+                <button class="btn btn-primary" onclick="showProductForm()">+ Lägg till Produkt</button>
+            </div>
+
+            <div id="product-form" class="form-container" style="display: none;">
+                <h3 id="product-form-title">Ny Produkt</h3>
+                <form id="productForm">
+                    <input type="hidden" id="productId">
+                    <div class="form-group">
+                        <label>Produktnamn *</label>
+                        <input type="text" id="productName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Pris (kr) *</label>
+                        <input type="number" id="productPrice" step="0.01" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Lagersaldo *</label>
+                        <input type="number" id="productStock" min="0" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Spara</button>
+                        <button type="button" class="btn btn-secondary" onclick="cancelProductForm()">Avbryt</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Produktnamn</th>
+                            <th>Pris</th>
+                            <th>Lagersaldo</th>
+                            <th>Åtgärder</th>
+                        </tr>
+                    </thead>
+                    <tbody id="products-table">
+                        <tr><td colspan="5" class="loading">Laddar...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- BESTÄLLNINGAR VIEW -->
+        <section id="orders-view" class="view">
+            <div class="view-header">
+                <h2>Beställningar</h2>
+                <button class="btn btn-primary" onclick="showOrderForm()">+ Ny Beställning</button>
+            </div>
+
+            <div id="order-form" class="form-container" style="display: none;">
+                <h3>Ny Beställning</h3>
+                <form id="orderForm">
+                    <div class="form-group">
+                        <label>Välj Kund *</label>
+                        <select id="orderCustomerId" required>
+                            <option value="">-- Välj kund --</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Välj Produkter</label>
+                        <div id="order-items">
+                            <div class="order-item-row">
+                                <select class="product-select" required>
+                                    <option value="">-- Välj produkt --</option>
+                                </select>
+                                <input type="number" class="quantity-input" placeholder="Antal" min="1" value="1" required>
+                                <button type="button" class="btn btn-small btn-danger" onclick="removeOrderItem(this)">✕</button>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-secondary btn-small" onclick="addOrderItem()">+ Lägg till produkt</button>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Skapa Beställning</button>
+                        <button type="button" class="btn btn-secondary" onclick="cancelOrderForm()">Avbryt</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Kund</th>
+                            <th>Datum</th>
+                            <th>Status</th>
+                            <th>Åtgärder</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orders-table">
+                        <tr><td colspan="5" class="loading">Laddar...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Beställningssystem - Projekt 3 © 2025</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
