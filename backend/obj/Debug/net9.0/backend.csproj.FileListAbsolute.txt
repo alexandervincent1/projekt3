@@ -117,6 +117,3 @@
 /Users/master/Desktop/Te4/projekt3/backend/obj/Debug/net9.0/backend.genruntimeconfig.cache
 /Users/master/Desktop/Te4/projekt3/backend/obj/Debug/net9.0/ref/backend.dll
 /Users/master/Desktop/Te4/projekt3/backend/bin/Debug/net9.0/backend.staticwebassets.runtime.json
-/Users/master/Desktop/Te4/projekt3/backend/obj/Debug/net9.0/compressed/0yulyb0yu6-cg7gxtxvzg.gz
-/Users/master/Desktop/Te4/projekt3/backend/obj/Debug/net9.0/compressed/aqey3km01p-tcy20yn8ib.gz
-/Users/master/Desktop/Te4/projekt3/backend/obj/Debug/net9.0/compressed/or13ubxd4m-tsnpg6pcj0.gz

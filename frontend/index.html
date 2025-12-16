@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beställningssystem - Projekt 3</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>🛒 Beställningssystem</h1>
+        <p>Hantera kunder, produkter och beställningar</p>
+    </header>
+
+    <nav>
+        <button class="nav-btn active" onclick="showView('customers')">👥 Kunder</button>
+        <button class="nav-btn" onclick="showView('products')">📦 Produkter</button>
+        <button class="nav-btn" onclick="showView('orders')">🛍️ Beställningar</button>
+    </nav>
+
+    <main>
+        <!-- Customers View -->
+        <section id="customers-view" class="view active">
+            <div class="view-header">
+                <h2>👥 Kunder</h2>
+                <button class="btn btn-primary" onclick="showCustomerForm()">+ Lägg till Kund</button>
+            </div>
+            <div id="customers-list" class="cards-grid"></div>
+        </section>
+
+        <!-- Products View -->
+        <section id="products-view" class="view">
+            <div class="view-header">
+                <h2>📦 Produkter</h2>
+                <button class="btn btn-primary" onclick="showProductForm()">+ Lägg till Produkt</button>
+            </div>
+            <div id="products-list" class="cards-grid"></div>
+        </section>
+
+        <!-- Orders View -->
+        <section id="orders-view" class="view">
+            <div class="view-header">
+                <h2>🛍️ Beställningar</h2>
+                <button class="btn btn-primary" onclick="showOrderForm()">+ Ny Beställning</button>
+            </div>
+            <div id="orders-list" class="cards-grid"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Beställningssystem - Projekt 3 | TE4</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "files.exclude": {
+    "**/bin": true,
+    "**/obj": true,
+    "**/.vs": true,
+    "**/node_modules": true
+  },
+  "search.exclude": {
+    "**/bin": true,
+    "**/obj": true
+  },
+  "explorer.compactFolders": false,
+  "explorer.sortOrder": "type"
+}

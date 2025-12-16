@@ -1,0 +1,26 @@
+{
+  "folders": [
+    {
+      "name": "🚀 projekt3",
+      "path": "."
+    },
+    {
+      "name": "⚙️ backend",
+      "path": "./backend"
+    },
+    {
+      "name": "🎨 frontend",
+      "path": "./frontend"
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/bin": true,
+      "**/obj": true,
+      "**/.vs": true,
+      "**/node_modules": true
+    },
+    "explorer.confirmDelete": false,
+    "explorer.compactFolders": false
+  }
+}
